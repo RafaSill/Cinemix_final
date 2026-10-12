@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Limelight&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" th:href="@{/CSS/reset.css}">
+    <link rel="stylesheet" th:href="@{/CSS/home.css}">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.22.1/jquery.validate.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.22.1/localization/messages_pt_BR.min.js"></script>
+
+    <title>home</title>
+</head>
+
+<body>
+    <aside class="navbar">
+        <nav>
+            <div class="user_name"> 
+                <img src="../ICON/icon-user.svg" alt="icon-user" id="icon-user">
+                <span th:text="${user.nome}"></span>
+            </div>
+
+            <a th:href="@{/historico-compras}">Histórico de compras</a>
+            <a th:href="@{/atualizar-dados}">Alterar dados</a>
+            <a th:href="@{/}">Sair</a>
+        </nav>
+    </aside>
+
+    <header>
+        <h1>CINEMIX</h1>
+    </header>
+
+    <section>
+        <div class="sublinhado">
+            <h2>O QUE DESEJA FAZER?</h2>
+            <img src="../ICON/icon-line.svg" class="linha">
+        </div>
+
+        <div class="cards-opcoes">
+            
+            <a class="card-catalogo" th:href="@{/catalogo}">
+                <div class="img-catalogo"></div>
+                <h4>CATÁLOGO</h4>
+                <p>Veja todos os filmes disponíveis!</p>
+            </a>
+
+            <a class="card-comprar-alugar" th:href="@{/comprar-alugar}">
+                <div class="img-comprar-alugar"></div>
+                <h4>COMPRAR/ALUGAR</h4>
+                <p>Alugue ou compre seus filmes favoritos</p>
+            </a>
+
+            <a th:if="${isAdmin}" class="card-add-filmes" th:href="@{/adicionar-filme}">
+                <div class="img-adicionar"></div>
+                <h4>ADICIONAR FILMES</h4>
+            </a>
+
+        </div>
+    </section>
+
+    <script src="@{/JS/home.js}"></script>
+</body>
+
+</html>

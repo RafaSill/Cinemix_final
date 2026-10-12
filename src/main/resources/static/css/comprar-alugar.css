@@ -1,0 +1,103 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('../IMG/fundo-cinema.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h2{
+    text-align: center;
+    color: #FFFF;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+h3{
+    color: #FFFF;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+label{
+    color: #FFFF;
+    margin: 20px auto;
+}
+
+input{
+    display: flex;
+    border-radius: 5px;
+    width: 235px;
+    padding: 5px;
+
+    justify-content: center;
+    
+}
+
+.form-pagar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 50px;
+}
+
+.comprar-alugar{
+    display: flex;
+    gap: 15px;
+}
+
+.btn{
+    width: 200px;
+    background-color: #65161E;
+    color: #FFFF;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+    background-color: #65161E;
+    color: #FFFF;
+}
+
+.opcao-escolha{
+    display: flex;
+    gap: 10px;
+}
+
+.escolher-pagamento{
+    display: flex;
+    gap: 5px;
+}
+
+.form-select{
+    margin-top: 15px;
+    width: 235px;
+
+    background-color: #09131A !important;
+    color: #FFFF;
+}
+
+.btn-pagar{
+    background-color: #65161E;
+    color: #FFFF;
+
+    margin-top: 50px;
+    width: 200px;
+    
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .comprar-alugar{
+        width: 300px;
+    }
+
+    .form-select{
+        width: 150px;
+    }
+
+    input{
+        width: 150px;
+    }
+}

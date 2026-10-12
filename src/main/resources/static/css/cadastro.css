@@ -1,0 +1,110 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('../IMG/fundo-cinema.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    font-size: 10vh !important;
+    color: rgb(101, 22, 30);
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #1D3557;
+    color: #FFFF;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+
+    height: 50px;
+}
+
+label{
+    font-weight: bold;
+    color: #65161E;
+}
+
+label.error{
+    color: #FFFF;
+}
+
+.formulario-cadastro {
+    width: 90%;
+    max-width: 900px;
+    padding: 50px;
+    margin: 0 auto;
+
+    border-radius: 15px;
+
+    background-color: #09131a;
+    color: #FFFF;
+}
+
+
+.botao-cadastro {
+    text-align: center;
+}
+
+.botao-cadastro .btn-primary {
+    font-weight: bolder;
+    background-color: #FFFF;
+    color: #09131a;
+}
+
+.botao-cadastro .btn-primary:hover {
+    background-color: #034078;
+    color: #FFFF;
+}
+
+.btn-primary {
+    width: 500px;
+    max-width: 150px;
+    margin-top: 50px;
+}
+
+.col-md-6 #inputCity {
+    max-width: 900px;
+}
+
+button:hover {
+    background-color: #65161E !important;
+}
+
+@media (min-width: 576px) {
+    h1 {
+        font-size: clamp(5vh, 7vh);
+    }
+}
+
+@media (max-width: 300px) {
+    h1{
+        font-size: 2vh;
+    }
+}
+
+@media (min-width: 300px) {
+    h1{
+        font-size: 4vh;
+    }
+}
+
+@media (min-width: 1200px) {
+    .col-md-6 #inputCity {
+        width: 785px;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-md-6 #inputCity {
+        width: 785px;
+    }
+}

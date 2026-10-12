@@ -1,0 +1,272 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('../IMG/fundo-cinema.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1{
+    padding: 20px;
+    font-size: 7vh !important;
+    color: #65161E !important;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+h2{
+    font-size: 5vh;
+    color: #65161E;
+    margin-top: 50px;
+}
+
+h4{
+    color: #FFFF !important;
+    font-size: 3vh;
+   
+}
+
+p{
+    margin: 20px auto;
+    color: #FFFF;
+}
+
+button{
+    all: unset;
+    height: 40px;
+    width: 50px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+section{
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+span{
+    color: #FFFF; 
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #FFFF;
+    font-family: 'Bebas Neue', sans-serif;
+    transition: 0.1s;
+}
+
+.navbar a:hover {
+    background-color: #65161E;
+    width: 50%;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    width: 260px;
+    height: 100vh;
+    padding: 24px;
+
+    background-color: #09131a;
+    z-index: 10;
+}
+
+.navbar nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.user_name{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.sublinhado{
+    text-align: center; 
+    
+}
+
+.linha{
+    text-align: center;
+    justify-content: center;
+}
+
+.cards-opcoes{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: center;
+    padding-top: 30px;
+    
+}
+
+.cards-opcoes > a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card-catalogo{
+    height: 400px;
+    width: 300px;
+    border-radius: 10px;
+    background-color: #09131a;
+
+    display: flex;  
+    flex-direction: column;           
+    justify-content: center;    
+    align-items: center;  
+    transition: 1s;
+
+    cursor: pointer;
+}
+
+.card-catalogo:hover{
+    transform: scale(1.1);
+}
+
+.img-catalogo{
+    height: 50%;
+    width: 50%;
+    background-image: url('../IMG/catalogo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.card-comprar-alugar{
+    width: 300px;
+    border-radius: 10px;
+    background-color: #09131a;
+
+    cursor: pointer;
+}
+
+.card-comprar-alugar{
+    height: 400px;
+    width: 300px;
+    border-radius: 10px;
+    background-color: #09131a;
+
+    display: flex;  
+    flex-direction: column;           
+    justify-content: center;    
+    align-items: center;  
+    transition: 1s;
+}
+
+.card-comprar-alugar:hover{
+    transform: scale(1.1);
+}
+
+.img-comprar-alugar{
+    height: 50%;
+    width: 50%;
+    background-image: url('../IMG/comprar-alugar.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.card-add-filmes{
+    height: 400px;
+    width: 300px;
+    border-radius: 10px;
+    background-color: #09131a;
+
+    display: flex;  
+    flex-direction: column;           
+    justify-content: center;    
+    align-items: center;  
+    transition: 1s;
+
+    cursor: pointer;
+}
+
+.card-add-filmes:hover{
+    transform: scale(1.1);
+}
+
+.img-adicionar{
+    height: 50%;
+    width: 50%;
+    background-image: url('../IMG/img-adicionar.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+@media (max-width: 576px) {
+    .cards-opcoes{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-right: 0;
+        padding-top: 75px;
+    }
+
+    .navbar {
+        top: 0;
+        right: 0;
+        left: 0;
+
+        width: 100%;
+        height: 75px;
+        padding: 10px 16px;
+    }
+
+    .navbar nav {
+        flex-direction: row;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .cards-opcoes {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    h1 {
+        font-size: 5vh !important;
+    }
+
+    h2 {
+        font-size: 4vh;
+        margin-top: 25px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1050px) {
+    .navbar {
+        top: 0;
+        right: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100px;
+        padding: 10px 16px;
+    }
+
+    body{
+        height: 100%;
+    }
+
+    .cards-opcoes{
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,83 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('../IMG/fundo-cinema.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+h1{
+    color: #65161E !important;
+    font-size: 10vh !important;
+    font-weight: bold !important;
+    margin: 0;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    padding-top: 50px;
+}
+
+a{
+    color: #65161E !important;
+    text-decoration: none !important;
+    font-weight: bolder;
+}
+
+.formulario-login{
+    width: 90%;
+    max-width: 500px;
+    height: 500px;
+    background-color: #09131a;
+    color: #FFFF;
+    border-radius: 15px;
+}
+
+
+.formulario-login .form-control{
+    width: 400px;
+}
+
+div .mb-3{
+    display: flex;
+    width: 90%;
+    max-width: 500px;
+    flex-direction: row;
+    gap: 15px;
+
+    padding-left: 20px;
+}
+
+.formulario-login .btn-entrar{
+    background-color: #FFFF ;
+    color: #09131a;
+    margin: 10px auto;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    font-weight: bolder;
+}
+
+.btn-entrar:hover{
+    background-color: #65161E;
+    color: #FFFF;
+}
+
+.boas-vindas{
+    padding-top: 50px;
+    text-align: center;
+}
+
+.fazer-cadastro{
+    margin-top: 10px;
+    text-align: center;
+}
