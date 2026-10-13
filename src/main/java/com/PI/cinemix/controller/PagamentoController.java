@@ -1,5 +1,6 @@
 package com.PI.cinemix.controller;
 
+import com.PI.cinemix.entity.AlugarFilmesEntity;
 import com.PI.cinemix.entity.ComprarFilmesEntity;
 import com.PI.cinemix.entity.FilmesEntity;
 import com.PI.cinemix.entity.TipoPagamentoEntity;
@@ -26,12 +27,12 @@ public class PagamentoController {
 
     @Autowired
     AlugarFilmesService alugarFilmesService;
-    
+
     @Autowired
     private FilmesRepository filmesRepository;
 
     @Autowired
-    private UsersRepository usersRepository;    
+    private UsersRepository usersRepository;
 
     @Autowired
     private TipoPagamentoRepository tipoPagamentoRepository;
@@ -62,6 +63,14 @@ public class PagamentoController {
             @RequestParam Long filmeId,
             @RequestParam Long tipoPagamentoId,
             @RequestParam String tipoOperacao,
+            @RequestParam(required = false)
+            @org.springframework.format.annotation.DateTimeFormat(
+                    iso = org.springframework.format.annotation.DateTimeFormat.ISO.DATE
+            ) LocalDate dataInicio,
+            @RequestParam(required = false)
+            @org.springframework.format.annotation.DateTimeFormat(
+                    iso = org.springframework.format.annotation.DateTimeFormat.ISO.DATE
+            ) LocalDate dataDevolucao,
             HttpSession session) {
 
         Long usuarioId = (Long) session.getAttribute("usuarioId");
@@ -84,7 +93,7 @@ public class PagamentoController {
                                 -> new IllegalArgumentException(
                                 "Forma de pagamento não encontrada"));
 
-        if("COMPRA".equals(tipoOperacao)) {
+        if ("COMPRA".equals(tipoOperacao)) {
 
             ComprarFilmesEntity compra = new ComprarFilmesEntity();
 
@@ -98,9 +107,25 @@ public class PagamentoController {
 
         } else if ("ALUGUEL".equals(tipoOperacao)) {
 
-            return "redirect:/comprar-alugar";
+            if (dataInicio == null || dataDevolucao == null
+                    || dataDevolucao.isBefore(dataInicio)) {
+                return "redirect:/escolher-filme";
+            }
+
+            AlugarFilmesEntity aluguel = new AlugarFilmesEntity();
+
+            aluguel.setUsers(usuario);
+            aluguel.setFilmes(filme);
+            aluguel.setTipoPagamento(pagamento);
+            aluguel.setDataInicio(dataInicio);
+            aluguel.setDataDevolucao(dataDevolucao);
+            aluguel.setValor(filme.getPrecoAluguel());
+            aluguel.setStatus("ATIVO");
+
+            alugarFilmesService.salvarAlugar(aluguel);
+
         } else {
-            return "redirect:/comprar-alugar";
+            return "redirect:/escolher-filme";
         }
 
         return "redirect:/historico-compras";

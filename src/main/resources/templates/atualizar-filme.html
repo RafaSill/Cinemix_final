@@ -33,16 +33,7 @@
         <h1>CINEMIX</h1>
     </header>
 
-    <form class="adicionar-filmes d-flex flex-column gap-3" action="*" th:action="@{/adicionarFilmes}" th:object="${filme}" method="PUT">
-        
-        <div>
-            <label for="titulo" class="form-label">Título</label>
-            <input type="text" th:field="*{titulo}" class="form-control" id="titulo" name="titulo">
-
-            <span class="erro-titulo"
-            style="display:flex; font-size:15px; margin-bottom: 10px;"></span>
-
-        </div>
+    <form class="adicionar-filmes d-flex flex-column gap-3" action="*" th:action="@{/adicionar-filme}" th:object="${filme}" method="PUT">
         
         <div>
             <label for="titulo" class="form-label">Título</label>
@@ -146,7 +137,7 @@
 
     </form>
 
-    <script src="@{/JS/addFilme.js}"></script>
+    <script th:src="@{/JS/addFilme.js}"></script>
 </body>
 
 </html>

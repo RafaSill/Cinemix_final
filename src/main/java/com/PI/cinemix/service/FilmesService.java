@@ -43,6 +43,9 @@ public class FilmesService {
         filme.setLancamento(filmeRequest.getLancamento());
         filme.setDuracaoEmMin(filmeRequest.getDuracaoEmMin());
         
+        filme.setPrecoAluguel(filmeRequest.getPrecoAluguel());
+        filme.setPrecoCompra(filmeRequest.getPrecoCompra());
+        
         return filmesRepository.save(filme);
     }
     
